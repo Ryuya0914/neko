@@ -11,7 +11,7 @@ public class Manager_P : MonoBehaviour
     bool Flag_Click = true;         //現在マウス入力を受け付けるならtrue
     bool Flag_OnGround = true;      //地面に接触していたらtrue
     // パラメータ **********************************************************
-    float GMove_Speed = 40.0f;      //自機の移動速度
+    float GMove_Speed = 100.0f;     //自機の移動速度
     int Life = 5;                   //ライフ
     float Distance_Arrow = 1.0f;    //プレイヤーから矢印までの距離
     float Angle_Arrow = 120f;       //重力移動できる角度
