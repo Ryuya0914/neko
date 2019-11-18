@@ -8,6 +8,7 @@ public class Hit : MonoBehaviour
     Manager_P _manager;
     Move _move;
     Life _life;
+    Score _score;
     //Audio_P _audio;
     //Animator_P _animator;
     //***************************************************************
@@ -15,6 +16,7 @@ public class Hit : MonoBehaviour
         _manager = GetComponentInParent<Manager_P>();
         _move = GetComponentInParent<Move>();
         _life = GetComponentInParent<Life>();
+        _score = GameObject.Find("GameRoot").GetComponent<Score>();
         //_audio = transform.parent.Find("Audio_P").GetComponent<Audio_P>();
         //_animator = GetComponentInParent<Animator_P>();
     }
@@ -36,26 +38,25 @@ public class Hit : MonoBehaviour
     }
     //敵にあたったときの判定
     void OnTriggerEnter2D(Collider2D col) {
-        if (col.gameObject.tag == "Enemy") {
+        if(col.gameObject.tag == "Enemy") {
             // リズム判定を取ってくる
             int result = 0;
             switch(result) {        // 判定結果ごとに処理
                 case 0:                 // Parfect
+                    _score.AddScore(200);
                     break;
                 case 1:                 // Good
+                    _score.AddScore(100);
                     break;
                 case 2:                 // Bad
-                    if(_life.DecreaseHP() <= 0)
-                        // ここにHPが0になった時の処理を書く
-                        break;
-                break;
-        }
+                                        //if(_life.DecreaseHP() <= 0)               // HPを減らす、HPが0になったら
+                    break;
+            }
 
-
-    } else if (col.gameObject.tag == "Item") {  // Itemを取った時
+        } else if(col.gameObject.tag == "Item") {  // Itemを取った時
             _life.IncreaseHP();                         // HPを回復する
-        }
 
+        }
     }
 
 }
