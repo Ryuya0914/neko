@@ -22,33 +22,23 @@ public class Move : MonoBehaviour {
     }
 
     //プレイヤーをマウスカーソルの方向に飛ばす
-    public void GMove() {
-        //        float NowAngle = transform.localEulerAngles.z;
-
+    public void GMove(float rad) {
         //地面接触フラグを消す
         manager.Flag_onGround = false;
 
-        //自機からマウスカーソルのベクトル
-        Vector2 vec = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        //角度(ラジアン)
-        float rad = Mathf.Atan2(vec.y, vec.x);
         //角度(度数法)
         float deg = Mathf.Rad2Deg * rad;
-        //角度に制限を掛ける
-        //        if (deg >= NowAngle + Angle_Range || deg <= -90) deg = NowAngle + Angle_Range;
-        //        if (deg <= NowAngle - Angle_Range && deg >= -90) deg = NowAngle - Angle_Range;
-        //        //度数法で角度を制限したため角度(ラジアン)を修正
-        //        rad *= Mathf.Deg2Rad;
 
         //それぞれの軸に与える重力の大きさと向き
-        float vx = Mathf.Cos(rad) * speed;
-        float vy = Mathf.Sin(rad) * speed;
+        float vx = Mathf.Cos((deg + 90) * Mathf.Deg2Rad) * speed;
+        float vy = Mathf.Sin((deg + 90) * Mathf.Deg2Rad) * speed;
 
         //プレイヤーの重力を変更して飛ばす
-        vec = new Vector2(vx, vy);
+        Vector2 vec = new Vector2(vx, vy);
         rigid2d.velocity = vec;
         //プレイヤーを回転
-        transform.rotation = Quaternion.Euler(0, 0, deg + 90);
+        if(deg < 0) deg += 360;
+        transform.rotation = Quaternion.Euler(0, 0, deg + 180);
         Forward_Update();
     }
 
