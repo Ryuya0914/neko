@@ -41,7 +41,8 @@ public class UI_P : MonoBehaviour {
         //移動可能フラグが立っているか確認
         if(AllMoveFlag) {
             //移動するメソッドを呼び出す
-            _move.GMove();
+            _move.GMove(_manager.GetAngle_PlayerMouse());
+            _manager.MoveStateChange();
             ////音を再生
             //_audio.Audio_Jump();
             ////アニメーションを再生
@@ -52,13 +53,14 @@ public class UI_P : MonoBehaviour {
     //矢印の位置と角度を更新する
     void Arrow_Update() {
         if(AllMoveFlag) { //重力移動出来るとき
-            //角度を取得
-            float deg = _manager.GetAngle_PlayerMouse();
+            //角度を取得(弧度法から度数法に変換)
+            float deg = _manager.GetAngle_PlayerMouse() * Mathf.Rad2Deg;
+            if(deg < 0) deg += 360;
             //矢印を回転
             if(transform.parent.localScale.x > 0)
-                transform.rotation = Quaternion.Euler(0, 0, deg);
+                transform.rotation = Quaternion.Euler(0, 0, deg + 90);
             else
-                transform.rotation = Quaternion.Euler(0, 0, deg + 180);
+                transform.rotation = Quaternion.Euler(0, 0, deg - 90);
         }
 
     }
