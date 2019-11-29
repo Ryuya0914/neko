@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class stage_generator : MonoBehaviour
 {
-    [SerializeField] GameObject[] s_pre = new GameObject[11];//ステージのプレハブ
-    GameObject[] go = new GameObject[11];
-    float[] s_pos = { 0, 36, 72, 108, 144, 180, 216, 252, 288, 324, 360 };//ステージのポジション
-    float[] kyori = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+    [SerializeField] GameObject[] s_pre = new GameObject[12];//ステージのプレハブ
+    GameObject[] go = new GameObject[12];
+    float[] s_pos = { 0, 36, 72, 108, 144, 180, 216, 252, 288, 324, 360, 396 };//ステージのポジション
+    float[] kyori = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
     void Start()
     {
@@ -21,7 +21,7 @@ public class stage_generator : MonoBehaviour
             s_pre[rnd] = x;
         }
         //ステージ配置
-        for (int i = 0; i < 11; i++)
+        for (int i = 0; i < 12; i++)
         {
             go[i] = Instantiate(s_pre[i], new Vector2(s_pos[i], 0), Quaternion.identity);
         }
@@ -30,12 +30,12 @@ public class stage_generator : MonoBehaviour
     void Update()
     {
 
-        for (int i = 0; i < 11; i++)
+        for (int i = 0; i < 12; i++)
         {
             kyori[i] = Mathf.Abs(s_pos[i] - gameObject.transform.position.x);
         }
 
-        for (int i = 0; i < 11; i++)
+        for (int i = 0; i < 12; i++)
         {
             if (kyori[i] >= 40)
             {

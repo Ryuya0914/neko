@@ -181,6 +181,7 @@ MonoBehaviour:
   p: {fileID: 1613880766}
   distance: 0.4
   count: 5
+  speed: 6
 --- !u!212 &88750458
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -445,6 +446,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebe7d8f3603e0cf4d994ac0e822b3cb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BGM: {fileID: 682717335}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -610,7 +612,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 572852b56e55ede45bbb0b0c4e81ee0a, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 12c606b49c39e764b9041b4c680e9c7d, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -748,6 +750,7 @@ MonoBehaviour:
   p: {fileID: 1613880766}
   distance: 0.4
   count: 5
+  speed: 6
 --- !u!212 &911742330
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1162,6 +1165,7 @@ MonoBehaviour:
   p: {fileID: 1613880766}
   distance: 0.4
   count: 5
+  speed: 6
 --- !u!212 &1556192243
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1358,6 +1362,7 @@ MonoBehaviour:
   p: {fileID: 1613880766}
   distance: 0.4
   count: 5
+  speed: 6
 --- !u!212 &1836771129
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1474,6 +1479,7 @@ MonoBehaviour:
   - {fileID: 3670041953195288658, guid: d8dddc6b84b2bcb4f92163b8333fd563, type: 3}
   - {fileID: 1593506751775638358, guid: 51361ecaa651a1a4f88d94b1855ce43c, type: 3}
   - {fileID: 6181214587413715814, guid: 5f9e73424696bff41b4fb32b0b3a138e, type: 3}
+  - {fileID: 5828711463192995051, guid: 686df20d5ad5ba748851915796453aff, type: 3}
 --- !u!1 &1976427227
 GameObject:
   m_ObjectHideFlags: 0
@@ -1526,6 +1532,7 @@ MonoBehaviour:
   p: {fileID: 1613880766}
   distance: 0.4
   count: 5
+  speed: 6
 --- !u!212 &1976427230
 SpriteRenderer:
   m_ObjectHideFlags: 0

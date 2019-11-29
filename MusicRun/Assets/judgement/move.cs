@@ -11,6 +11,7 @@ public class move : MonoBehaviour
     [SerializeField,Header("maneをgetcomponentする用")]GameObject l,p;
     [SerializeField, Header("判定ポイント過ぎた後の距離")] float distance;
     [SerializeField, Header("ノーツの合計数")] int count;
+    [SerializeField] float speed;
     mane mane;
     Life life;
     void Start()
