@@ -17,7 +17,7 @@ public class Life : MonoBehaviour
         _manager = GetComponent<Manager_P>();
         MaxLife = _manager.Get_Life;            // 最大HPを取得
         NowLife = MaxLife;                      // HPを取得
-        _lifeText = GameObject.Find("LifeText").GetComponent<Text>();
+        //_lifeText = GameObject.Find("LifeText").GetComponent<Text>();
     }
     
     // HPを１回復
@@ -31,16 +31,18 @@ public class Life : MonoBehaviour
 
     // HPを１減少
     public void DecreaseHP() {
-        // HPを１減らす
-        NowLife--;
-        // UIを更新
-        UpdateLifeText();
-        // HPが0になったら
-        if (NowLife <= 0) {
-            // とりあえず今はステージの最後に飛ばす
-            Camera.main.transform.position = new Vector3(360, 0, -10);
-            gameObject.transform.position = new Vector3(360, 0, 0);
-        }
+        //// HPを１減らす
+        //NowLife--;
+        //// UIを更新
+        //UpdateLifeText();
+        //// HPが0になったら
+        //if (NowLife <= 0) {
+        //    // プレイヤーを動かなくする
+        //    _manager.MoveStop();
+        //    // とりあえず今はステージの最後に飛ばす
+        //    Camera.main.transform.position = new Vector3(360, 0, -10);
+        //    gameObject.transform.position = new Vector3(360, 0, 0);
+        //}
 
 
     }

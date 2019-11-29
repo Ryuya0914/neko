@@ -56,9 +56,11 @@ public class Hit : MonoBehaviour
                     break;
 
             }
+            col.GetComponent<atattarakieru>().setactive_f();
 
         } else if(col.gameObject.tag == "Item") {  // Itemを取った時
             _life.IncreaseHP();                         // HPを回復する
+            col.GetComponent<atattarakieru>().setactive_f();
 
         }
     }
