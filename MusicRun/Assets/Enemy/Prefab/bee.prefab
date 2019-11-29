@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8718616553332848254}
   - component: {fileID: 8718616553332848255}
   - component: {fileID: 8718616553332848240}
+  - component: {fileID: 7263989707510334717}
   - component: {fileID: 1781045677376794693}
   m_Layer: 14
   m_Name: bee
@@ -100,6 +101,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7263989707510334717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8718616553332848241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f8b9d5ddb6130147a4e07f8a21fad26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!70 &1781045677376794693
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
