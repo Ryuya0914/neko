@@ -36,7 +36,12 @@ public class Life : MonoBehaviour
         // UIを更新
         UpdateLifeText();
         // HPが0になったら
-        
+        if (NowLife <= 0) {
+            // とりあえず今はステージの最後に飛ばす
+            Camera.main.transform.position = new Vector3(360, 0, -10);
+            gameObject.transform.position = new Vector3(360, 0, 0);
+        }
+
 
     }
 

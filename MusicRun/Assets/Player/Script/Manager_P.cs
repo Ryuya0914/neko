@@ -81,7 +81,6 @@ public class Manager_P : MonoBehaviour
         else if(moveState == 1)     // 下方向
             rad = Mathf.Max(rad, angles[1]) * x;
 
-
         return rad;
     }
 
