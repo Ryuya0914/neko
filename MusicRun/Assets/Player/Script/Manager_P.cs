@@ -89,4 +89,11 @@ public class Manager_P : MonoBehaviour
         moveState = (moveState == 0) ? 1 : 0;
     }
 
+    // プレイヤーを動かなくする
+    public void MoveStop() {
+        Flag_Click = false;
+        gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+    }
+
+
 }
