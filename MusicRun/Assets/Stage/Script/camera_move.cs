@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class camera_move : MonoBehaviour
 {
-    int spd = 1;
+    int spd = 10;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,11 +14,11 @@ public class camera_move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(gameObject.transform.position.x>= 360)
+        if (gameObject.transform.position.x >= 360)
         {
             spd = 0;
         }
-        gameObject.transform.position = new Vector2(spd * Time.deltaTime, 0);
+        gameObject.transform.position += new Vector3(spd * Time.deltaTime, 0);
         
     }
 }
