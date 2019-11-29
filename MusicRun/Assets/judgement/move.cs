@@ -8,13 +8,15 @@ public class move : MonoBehaviour
     [SerializeField,Header("判定表示用テキスト")] Text judge;
     [SerializeField,Header("BGMのaudiosource入れるやつ")] AudioSource BGM;
     [SerializeField,Header("maneのノーツ番号入れてね")] float interval;
-    [SerializeField,Header("maneをgetcomponentする用")]GameObject l;
+    [SerializeField,Header("maneをgetcomponentする用")]GameObject l,p;
     [SerializeField, Header("判定ポイント過ぎた後の距離")] float distance;
     [SerializeField, Header("ノーツの合計数")] int count;
     mane mane;
+    Life life;
     void Start()
     {
         mane = l.GetComponent<mane>();//mane引継ぎ用
+        life=p.GetComponent<Life>();
     }
 
     void Update()
@@ -31,7 +33,7 @@ public class move : MonoBehaviour
             if (mane.Recast)
             {
                 judge.text = "Miss";//判定テキスト変更
-                //何か呼ぶならここ
+                life.DecreaseHP();
             }
             //ノーツ使いまわし用
             interval += count;

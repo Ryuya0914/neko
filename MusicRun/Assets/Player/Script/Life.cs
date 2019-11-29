@@ -30,7 +30,6 @@ public class Life : MonoBehaviour
     public void DecreaseHP() {
         // HPを１減らす
         NowLife--;
-
         // UIを更新
         
         // HPが0になったら

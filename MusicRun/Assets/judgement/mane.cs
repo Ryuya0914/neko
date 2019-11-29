@@ -29,21 +29,6 @@ public class mane : MonoBehaviour
     [SerializeField,Header("オブジェクトまとめたもの")] Item Item;
     [HideInInspector] public bool Recast = true;
     float A, B, C, Max;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            Return_Judge();
-        }
-    }
     //矢印と判定位置の距離の差のやつ
     void Distance()
     {

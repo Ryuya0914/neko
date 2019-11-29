@@ -178,6 +178,7 @@ MonoBehaviour:
   BGM: {fileID: 682717335}
   interval: 1
   l: {fileID: 1805733210}
+  p: {fileID: 1613880766}
   distance: 0.4
   count: 3
 --- !u!212 &88750458
@@ -567,6 +568,7 @@ MonoBehaviour:
   BGM: {fileID: 682717335}
   interval: 2
   l: {fileID: 1805733210}
+  p: {fileID: 1613880766}
   distance: 0.4
   count: 3
 --- !u!212 &911742330
@@ -985,6 +987,7 @@ MonoBehaviour:
   BGM: {fileID: 682717335}
   interval: 3
   l: {fileID: 1805733210}
+  p: {fileID: 1613880766}
   distance: 0.4
   count: 3
 --- !u!212 &1556192243
@@ -1049,6 +1052,24 @@ Transform:
   m_Father: {fileID: 1805733212}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1613880766 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5198909830413325792, guid: ac62f7f68bed28047852045ac0d89c1e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1546845597}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1613880772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1613880766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23278b3151294cc4988ac6a2b791e3e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1805733210
 GameObject:
   m_ObjectHideFlags: 0
