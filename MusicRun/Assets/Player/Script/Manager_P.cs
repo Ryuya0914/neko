@@ -17,6 +17,7 @@ public class Manager_P : MonoBehaviour
     float Angle_Arrow = 100f;       // 重力移動できる角度
     int moveState = 0;              // 重力移動する方向(上下)の切り替え用変数
     float[] angles;                 // 重力移動の制限に使う値を格納するやつ
+    int _judgement = -1;            // クリック時にリズムの判定を格納する、地面ついたときに手放す
     // *********************************************************************
 
     void Start() {
@@ -36,6 +37,13 @@ public class Manager_P : MonoBehaviour
         get { return this.Flag_Click; }
         set { this.Flag_Click = value; }
     }
+    // パラメータの受け渡し
+    public int Judge_GetSet {
+        get { return this._judgement; }
+        set { this._judgement = value; }
+    }
+
+
     //パラメータを渡す
     public float Get_gMove_Speed { get { return this.GMove_Speed; } }
     public float Get_distance_Arrow { get { return this.Distance_Arrow; } }

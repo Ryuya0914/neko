@@ -28,6 +28,9 @@ public class Hit : MonoBehaviour
                 ////SE再生
                 //_audio.Audio_Land();
 
+                // リズム判定の評価情報を初期化
+                _manager.Judge_GetSet = -1;
+
                 //地面に立つメソッドを呼ぶ
                 _move.Land(col.contacts[0]);
 
@@ -40,17 +43,18 @@ public class Hit : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col) {
         if(col.gameObject.tag == "Enemy") {
             // リズム判定を取ってくる
-            int result = 0;
+            int result = _manager.Judge_GetSet;
             switch(result) {        // 判定結果ごとに処理
-                case 0:                 // Parfect
-                    _score.AddScore(200);
+                case 0:                 // Bad
+                    _life.DecreaseHP();     // HPを減らす
                     break;
                 case 1:                 // Good
-                    _score.AddScore(100);
+                    _score.AddScore(100);   // Score獲得
                     break;
-                case 2:                 // Bad
-                                        //if(_life.DecreaseHP() <= 0)               // HPを減らす、HPが0になったら
+                case 2:                 // Parfect
+                    _score.AddScore(200);   // Score獲得
                     break;
+
             }
 
         } else if(col.gameObject.tag == "Item") {  // Itemを取った時

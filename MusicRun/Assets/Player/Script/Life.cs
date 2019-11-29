@@ -19,15 +19,23 @@ public class Life : MonoBehaviour
     }
     
     // HPを１回復
-    public int IncreaseHP() {
+    public void IncreaseHP() {
         if(NowLife < MaxLife)   // 最大HPより小さい場合は１足す
             NowLife++;
-        return NowLife;         // 現在のHPを返す
+
+        // UIを更新
     }
 
     // HPを１減少
-    public int DecreaseHP() {
-        return --NowLife;       // HPを１減らして返す
+    public void DecreaseHP() {
+        // HPを１減らす
+        NowLife--;
+
+        // UIを更新
+        
+        // HPが0になったら
+        
+
     }
 
 }

@@ -6,6 +6,7 @@ public class UI_P : MonoBehaviour {
     // スクリプト **********************************************************
     Manager_P _manager;
     Move _move;
+    mane _mane;
     //Audio_P _audio;
     //Animator_P _animator;
     // パラメータ **********************************************************
@@ -16,6 +17,7 @@ public class UI_P : MonoBehaviour {
     void Start() {
         _manager = GetComponentInParent<Manager_P>();
         _move = GetComponentInParent<Move>();
+        _mane = GameObject.Find("mane").GetComponent<mane>();
         //_audio = transform.parent.Find("Audio_P").GetComponent<Audio_P>();
         //_animator = transform.parent.GetComponent<Animator_P>();
         Angle_Range = _manager.Get_angle_Arrow / 2f;
@@ -40,6 +42,8 @@ public class UI_P : MonoBehaviour {
     void LeftClick() {
         //移動可能フラグが立っているか確認
         if(AllMoveFlag) {
+            // リズム判定を獲得
+            _manager.Judge_GetSet = _mane.Return_Judge();
             //移動するメソッドを呼び出す
             _move.GMove(_manager.GetAngle_PlayerMouse());
             _manager.MoveStateChange();
