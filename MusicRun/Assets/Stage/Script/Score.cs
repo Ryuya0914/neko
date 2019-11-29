@@ -17,6 +17,9 @@ public class Score : MonoBehaviour
     public float Get_Score { get { return _Score; } }
 
     // スコアを加算する
-    public void AddScore(float s) { _Score += s; }
+    public void AddScore(float s) {
+        _Score += s;
+        Debug.Log(_Score);
+    }
 
 }

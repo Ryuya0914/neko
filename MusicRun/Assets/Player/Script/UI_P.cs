@@ -7,6 +7,7 @@ public class UI_P : MonoBehaviour {
     Manager_P _manager;
     Move _move;
     mane _mane;
+    Score _score;
     //Audio_P _audio;
     //Animator_P _animator;
     // パラメータ **********************************************************
@@ -18,6 +19,7 @@ public class UI_P : MonoBehaviour {
         _manager = GetComponentInParent<Manager_P>();
         _move = GetComponentInParent<Move>();
         _mane = GameObject.Find("mane").GetComponent<mane>();
+        _score = GameObject.Find("GameRoot").GetComponent<Score>();
         //_audio = transform.parent.Find("Audio_P").GetComponent<Audio_P>();
         //_animator = transform.parent.GetComponent<Animator_P>();
         Angle_Range = _manager.Get_angle_Arrow / 2f;
@@ -43,7 +45,16 @@ public class UI_P : MonoBehaviour {
         //移動可能フラグが立っているか確認
         if(AllMoveFlag) {
             // リズム判定を獲得
-            _manager.Judge_GetSet = _mane.Return_Judge();
+            int judgeNum = _mane.Return_Judge();
+            _manager.Judge_GetSet = judgeNum;   // managerのほうに設定
+            switch(judgeNum) {      // 移動時にスコア加算
+                case 1:                 // Good
+                    _score.AddScore(5);   // Score獲得
+                    break;
+                case 2:                 // Parfect
+                    _score.AddScore(10);   // Score獲得
+                    break;
+            }
             //移動するメソッドを呼び出す
             _move.GMove(_manager.GetAngle_PlayerMouse());
             _manager.MoveStateChange();
