@@ -41,6 +41,6 @@ public class move : MonoBehaviour
             this.gameObject.GetComponent<SpriteRenderer>().material.color = Color.white;
         }
         //BGMとintervalを比較して差分で動かす用
-        transform.position = new Vector2((interval - BGM.time) * 10 + Target.transform.position.x, -4);
+        transform.position = new Vector2((interval - BGM.time) * 10 + Target.transform.position.x, -8);
     }
 }

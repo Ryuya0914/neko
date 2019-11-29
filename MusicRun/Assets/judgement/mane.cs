@@ -21,6 +21,8 @@ class Item
     [Header("ノーツその1")]public GameObject A1;
     [Header("ノーツその2")]public GameObject A2;
     [Header("ノーツその3")]public GameObject A3;
+    [Header("ノーツその4")]public GameObject A4;
+    [Header("ノーツその5")]public GameObject A5;
     [Header("判定表示用テキスト")]public Text JugdeText;
 }
 public class mane : MonoBehaviour
@@ -28,16 +30,20 @@ public class mane : MonoBehaviour
     [SerializeField,Header("変数まとめたもの")] Summary Summary;
     [SerializeField,Header("オブジェクトまとめたもの")] Item Item;
     [HideInInspector] public bool Recast = true;
-    float A, B, C, Max;
+    float A, B, C,D,E, Max;
     //矢印と判定位置の距離の差のやつ
     void Distance()
     {
         A = Mathf.Abs(Item.A1.transform.position.x - Item.Target.transform.position.x);
         B = Mathf.Abs(Item.A2.transform.position.x - Item.Target.transform.position.x);
         C = Mathf.Abs(Item.A3.transform.position.x - Item.Target.transform.position.x);
+        D = Mathf.Abs(Item.A4.transform.position.x - Item.Target.transform.position.x);
+        E = Mathf.Abs(Item.A5.transform.position.x - Item.Target.transform.position.x);
         Max = A;
         if (B < Max) Max = B;
         if (C < Max) Max = C;
+        if (D < Max) Max = D;
+        if (E < Max) Max = E;
     }
     //矢印が消えるやつ
     void Vanish()
@@ -46,7 +52,9 @@ public class mane : MonoBehaviour
         {
             if (A == Max) Item.A1.GetComponent<SpriteRenderer>().material.color =Summary.Transparent;
             else if (B == Max) Item.A2.GetComponent<SpriteRenderer>().material.color = Summary.Transparent;
-            else Item.A3.GetComponent<SpriteRenderer>().material.color = Summary.Transparent;
+            else if (C == Max) Item.A3.GetComponent<SpriteRenderer>().material.color = Summary.Transparent;
+            else if (D == Max) Item.A4.GetComponent<SpriteRenderer>().material.color = Summary.Transparent;
+            else Item.A5.GetComponent<SpriteRenderer>().material.color = Summary.Transparent;
         }
     }
     //判定のやつ
