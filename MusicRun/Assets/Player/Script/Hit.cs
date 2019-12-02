@@ -39,6 +39,23 @@ public class Hit : MonoBehaviour
             }
         }
     }
+    void OnCollisionEnter2D(Collision2D col) {
+        if(col.gameObject.tag == "Ground") { //タグの確認
+            if(!_manager.Flag_onGround) {  //地面から離れているか確認
+                ////SE再生
+                //_audio.Audio_Land();
+
+                // リズム判定の評価情報を初期化
+                _manager.Judge_GetSet = -1;
+
+                //地面に立つメソッドを呼ぶ
+                _move.Land(col.contacts[0]);
+
+                ////地面に立つ
+                //_animator.Animation_Land();
+            }
+        }
+    }
     //敵にあたったときの判定
     void OnTriggerEnter2D(Collider2D col) {
         if(col.gameObject.tag == "Enemy") {
