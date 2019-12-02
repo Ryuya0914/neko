@@ -14,6 +14,7 @@ public class UI_P : MonoBehaviour {
     // パラメータ **********************************************************
     bool AllMoveFlag = false;                   //移動できるかのフラグをまとめたもの
     float Angle_Range;                          //重力移動できる角度の範囲
+    SpriteRenderer spriteRenderer;              // 矢印の表示と非表示を切り替えるときに使う
     //  ********************************************************************
 
     void Start() {
@@ -25,6 +26,7 @@ public class UI_P : MonoBehaviour {
         //_audio = transform.parent.Find("Audio_P").GetComponent<Audio_P>();
         //_animator = transform.parent.GetComponent<Animator_P>();
         Angle_Range = _manager.Get_angle_Arrow / 2f;
+        spriteRenderer = GetComponent<SpriteRenderer>();
 
     }
     void Update() {
@@ -84,6 +86,12 @@ public class UI_P : MonoBehaviour {
                 transform.rotation = Quaternion.Euler(0, 0, deg + 90);
             else
                 transform.rotation = Quaternion.Euler(0, 0, deg - 90);
+            // 矢印を表示する
+            spriteRenderer.enabled = true;
+
+        } else {
+            // 矢印を非表示にする
+            spriteRenderer.enabled = false;
         }
 
     }
