@@ -765,6 +765,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4158441914445675073, guid: 918ca4d0df0d1c1468eb17fcde11f534,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4158441914445675079, guid: 918ca4d0df0d1c1468eb17fcde11f534,
         type: 3}
       propertyPath: Item.JugdeText
@@ -815,6 +820,16 @@ PrefabInstance:
       propertyPath: JugdeText
       value: 
       objectReference: {fileID: 303927506}
+    - target: {fileID: 4158441914997197652, guid: 918ca4d0df0d1c1468eb17fcde11f534,
+        type: 3}
+      propertyPath: a
+      value: 0.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 4158441914997197652, guid: 918ca4d0df0d1c1468eb17fcde11f534,
+        type: 3}
+      propertyPath: b
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 4158441915133480381, guid: 918ca4d0df0d1c1468eb17fcde11f534,
         type: 3}
       propertyPath: BGM
@@ -825,6 +840,16 @@ PrefabInstance:
       propertyPath: JugdeText
       value: 
       objectReference: {fileID: 303927506}
+    - target: {fileID: 4158441915133480381, guid: 918ca4d0df0d1c1468eb17fcde11f534,
+        type: 3}
+      propertyPath: a
+      value: 0.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 4158441915133480381, guid: 918ca4d0df0d1c1468eb17fcde11f534,
+        type: 3}
+      propertyPath: b
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 4158441915337010414, guid: 918ca4d0df0d1c1468eb17fcde11f534,
         type: 3}
       propertyPath: BGM
@@ -835,6 +860,16 @@ PrefabInstance:
       propertyPath: JugdeText
       value: 
       objectReference: {fileID: 303927506}
+    - target: {fileID: 4158441915337010414, guid: 918ca4d0df0d1c1468eb17fcde11f534,
+        type: 3}
+      propertyPath: a
+      value: 0.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 4158441915337010414, guid: 918ca4d0df0d1c1468eb17fcde11f534,
+        type: 3}
+      propertyPath: b
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 4158441915664594790, guid: 918ca4d0df0d1c1468eb17fcde11f534,
         type: 3}
       propertyPath: BGM
@@ -845,6 +880,16 @@ PrefabInstance:
       propertyPath: JugdeText
       value: 
       objectReference: {fileID: 303927506}
+    - target: {fileID: 4158441915664594790, guid: 918ca4d0df0d1c1468eb17fcde11f534,
+        type: 3}
+      propertyPath: a
+      value: 0.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 4158441915664594790, guid: 918ca4d0df0d1c1468eb17fcde11f534,
+        type: 3}
+      propertyPath: b
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 4158441915699192421, guid: 918ca4d0df0d1c1468eb17fcde11f534,
         type: 3}
       propertyPath: BGM
@@ -855,6 +900,16 @@ PrefabInstance:
       propertyPath: JugdeText
       value: 
       objectReference: {fileID: 303927506}
+    - target: {fileID: 4158441915699192421, guid: 918ca4d0df0d1c1468eb17fcde11f534,
+        type: 3}
+      propertyPath: a
+      value: 0.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 4158441915699192421, guid: 918ca4d0df0d1c1468eb17fcde11f534,
+        type: 3}
+      propertyPath: b
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 4158441916017036901, guid: 918ca4d0df0d1c1468eb17fcde11f534,
         type: 3}
       propertyPath: BGM
@@ -865,6 +920,16 @@ PrefabInstance:
       propertyPath: JugdeText
       value: 
       objectReference: {fileID: 303927506}
+    - target: {fileID: 4158441916017036901, guid: 918ca4d0df0d1c1468eb17fcde11f534,
+        type: 3}
+      propertyPath: a
+      value: 0.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 4158441916017036901, guid: 918ca4d0df0d1c1468eb17fcde11f534,
+        type: 3}
+      propertyPath: b
+      value: 0.6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 918ca4d0df0d1c1468eb17fcde11f534, type: 3}
 --- !u!1 &1462461520

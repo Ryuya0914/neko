@@ -11,22 +11,28 @@ public class move : MonoBehaviour
     [SerializeField, Header("判定表示用テキスト")] Text JugdeText;
     [SerializeField, Header("ノーツの判定切り替え")] bool switching = true;
     [SerializeField, Header("ノーツの合計数")] int count;
-    [SerializeField, Header("maneのノーツ番号入れてね")] float interval;
+    [SerializeField, Header("maneのノーツ番号入れてね")] float Note_Number;
     [SerializeField, Header("判定ポイント過ぎた後の距離")] float distance;
+    [SerializeField,Range(0.4f,0.7f)]float Unkown=0.55f,intetval;
+    void Start()
+    {
+        intetval = Unkown;
+        Unkown*=Note_Number;
+    }
     void Update()
     {
         if (switching) Move();//move実行位置
         else Tinsel();//見掛け倒し用
     }
 
-
-
+   
+    
     //判定の存在する右側ノーツ用
     void Move()
     {
         Recycle();
         //BGMとintervalを比較して差分で動かす用
-        transform.position = new Vector2((interval - BGM.time) * 10 + Point.position.x, Point.position.y);
+        transform.position = new Vector2((Unkown - BGM.time) * 20 + Point.position.x, Point.position.y);
     }
 
 
@@ -36,7 +42,7 @@ public class move : MonoBehaviour
     {
         Recycle();
         //BGMとintervalを比較して差分で動かす用
-        transform.position = new Vector2((interval - BGM.time) * -10 + Point.position.x, Point.position.y);
+        transform.position = new Vector2((Unkown - BGM.time) * -40 + Point.position.x, Point.position.y);
     }
 
 
@@ -45,14 +51,14 @@ public class move : MonoBehaviour
     {
         
         //BGMの再生時間と各ノーツの持っている値を比較
-        if (BGM.time > interval + distance)
+        if (BGM.time >  Unkown+distance)
         {
             if (mane.Recast && switching)
             {
                 //何か呼ぶならここ
             }
             //ノーツ使いまわし用
-            interval += count;
+            Unkown += count*intetval;
             //透明になっていろノーツを元に戻すよう
             Sp.material.color = Color.white;
             //判定音の都合上必要
