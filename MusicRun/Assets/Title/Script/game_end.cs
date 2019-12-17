@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-public class Game_Start : MonoBehaviour
+
+public class game_end : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -15,13 +15,9 @@ public class Game_Start : MonoBehaviour
     {
         
     }
-    public void OnUserAction1()
-    {
-        Invoke("next", 2);
 
-    }
-    void next()
+    public void Quit()
     {
-        SceneManager.LoadScene("GameScene");
+        Application.Quit(); 
     }
 }

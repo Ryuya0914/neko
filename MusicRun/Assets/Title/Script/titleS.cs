@@ -8,6 +8,7 @@ public class titleS : MonoBehaviour
 {
     public string rank_Tag = "rank_Tag";
     public string game_Tag = "game_Tag";
+    public string gameEnd_Tag = "gameEnd_Tag";
     float fadeSpeed = 0.02f;
     float red, green, blue, alfa;
     public bool isFadeOut = false;
@@ -43,6 +44,12 @@ public class titleS : MonoBehaviour
                    hit.collider.gameObject.GetComponent<Game_Start>().OnUserAction1();
                     isFadeOut = true;
                     Debug.Log("a");
+                }
+                if (hit.collider.gameObject.CompareTag(gameEnd_Tag))
+                {
+                    hit.collider.gameObject.GetComponent<game_end>().Quit();
+                   
+                    Debug.Log("B");
                 }
 
             }

@@ -9,6 +9,8 @@ TagManager:
   - Enemy
   - EnemyChild
   - Item
+  - game_Tag
+  - gameEnd_Tag
   layers:
   - Default
   - TransparentFX
