@@ -13,10 +13,9 @@ public class move : MonoBehaviour
     [SerializeField, Header("ノーツの合計数")] int count;
     [SerializeField, Header("maneのノーツ番号入れてね")] float Note_Number;
     [SerializeField, Header("判定ポイント過ぎた後の距離")] float distance;
-    [SerializeField,Range(0.4f,0.7f)]float Unkown=0.55f,intetval;
+    [SerializeField,Range(0.1f,5.0f)]float Unkown=0.55f,intetval;
     void Start()
     {
-        intetval = Unkown;
         Unkown*=Note_Number;
     }
     void Update()
@@ -42,7 +41,7 @@ public class move : MonoBehaviour
     {
         Recycle();
         //BGMとintervalを比較して差分で動かす用
-        transform.position = new Vector2((Unkown - BGM.time) * -40 + Point.position.x, Point.position.y);
+        transform.position = new Vector2((Unkown - BGM.time) * -20 + Point.position.x, Point.position.y);
     }
 
 

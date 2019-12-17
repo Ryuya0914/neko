@@ -14,7 +14,7 @@ class Summary
     [Header("ノーツの判定される距離（判定ポイント基準）"),Range(2,4)] public float Judge_Distance;
     [Header("判定ポイントからのパーフェクト範囲"),Range(0.2f,0.4f)] public float Perfect_Distance;
     [Header("判定ポイントからのグッド範囲"),Range(1,3)] public float Good_Distance;
-    [Header("判定ポイントからのミス範囲"),Range(0.01f,0.15f)] public float Miss_Distance;
+    [Header("判定ポイントからのミス範囲"),Range(0.01f,0.5f)] public float Miss_Distance;
     [Header("判定テキストリセットまでの時間"),Range(0.2f,0.4f)] public float Reset_Time;
 }
 
@@ -30,6 +30,7 @@ class Item
     [Header("判定ポイント")] public Transform Point;
     [Header("パーフェクトエフェクト")] public GameObject Perfect_Efe;
     [Header("判定音")] public AudioClip[] Sound_Effect;
+    [SerializeField, Header("BGM入れる")]public AudioSource BGM;
 }
 
 
@@ -45,13 +46,16 @@ public class mane : MonoBehaviour
     [HideInInspector] public bool Vanish_Notes = true;
     //各ノーツの距離比較用
     float Notes_A, Notes_B, Notes_C, Distance_Min;
-    
-
+    [SerializeField]GameObject score;
+     bool z = true;
+    [SerializeField] GameObject score_root;
+    void Start()
+    {
+    }
     void Update()
     {
         //各ノーツの距離計算
         Distance();
-
         //ノーツをスルーした時の処理
         if (Distance_Min < Summary.Miss_Distance)
         {
@@ -71,6 +75,23 @@ public class mane : MonoBehaviour
 
         //試し用
         if (Input.GetKeyDown(KeyCode.Return)) Return_Judge();
+
+
+
+        if (!Item.BGM.isPlaying&&z)
+        {
+            z = false;
+            PlayerPrefs.SetFloat("score" + 0, score.GetComponent<Score>().Get_Score);
+            score_root.SetActive(true);
+        }
+
+
+
+
+
+
+
+
 
     }
 
@@ -209,10 +230,6 @@ public class mane : MonoBehaviour
             Recast = false;
             Invoke("RecastReset", Summary.Recasttime);
         }
-        //else
-        //{
-        //    Item.JugdeText.text = "Miss";
-        //}
         return Ret;
     }
 
