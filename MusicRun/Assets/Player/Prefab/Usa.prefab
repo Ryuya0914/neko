@@ -45,6 +45,9 @@ GameObject:
   - component: {fileID: 5198909830413325822}
   - component: {fileID: 5198909830413325793}
   - component: {fileID: 1613880772}
+  - component: {fileID: 1613880774}
+  - component: {fileID: 4752142715303105761}
+  - component: {fileID: 1580722919219092670}
   m_Layer: 11
   m_Name: Usa
   m_TagString: Player
@@ -189,6 +192,49 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 23278b3151294cc4988ac6a2b791e3e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &1613880774
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5198909830413325792}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1c58be4e87212b542b8c8f85a0c652e5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4752142715303105761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5198909830413325792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23278b3151294cc4988ac6a2b791e3e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1580722919219092670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5198909830413325792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a3e83e3d1ae656419ca6f1957172582, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5198909831496619769
@@ -422,13 +468,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 672294152029473004, guid: eff161ef8a7a128468a8f4e204bf5fdf,
         type: 3}
-      propertyPath: EmissionModule.rateOverTime.scalar
-      value: 100
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 672294152029473004, guid: eff161ef8a7a128468a8f4e204bf5fdf,
         type: 3}
-      propertyPath: InitialModule.startLifetime.scalar
-      value: 0.3
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eff161ef8a7a128468a8f4e204bf5fdf, type: 3}

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Move : MonoBehaviour {
     // スクリプト ************************************************
     Manager_P manager;
+    Animator_P _animator;
     // *****************************************************
     float speed = 0;                // 自機の移動速度
     Rigidbody2D rigid2d;            // 物理演算してくれるやつ
@@ -14,6 +15,7 @@ public class Move : MonoBehaviour {
 
     void Start() {
         manager = GetComponent<Manager_P>();
+        _animator = GetComponent<Animator_P>();
         rigid2d = GetComponent<Rigidbody2D>();
         //パラメータの取得
         speed = manager.Get_gMove_Speed;
@@ -69,6 +71,8 @@ public class Move : MonoBehaviour {
         transform.rotation *= q;
 
         rigid2d.velocity = new Vector2(0, 0);   //静止させる
+
+        _animator.Animation_Land();             // 着地のアニメーション
 
         //地面接触フラグを立てる
         manager.Flag_onGround = true;
