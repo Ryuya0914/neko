@@ -45,7 +45,7 @@ public class ranking : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Z)) for (int z = 0; z <= 5; z++) rank[z] = 0;
 
 
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetMouseButtonDown(0))
         {
             for (int z = 0; z <= 5; z++) PlayerPrefs.SetFloat("score" + z, rank[z]);
             Invoke("Scene", 1);

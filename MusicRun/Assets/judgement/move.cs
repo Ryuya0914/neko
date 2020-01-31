@@ -16,7 +16,7 @@ public class move : MonoBehaviour
     [SerializeField,Range(0.1f,5.0f)]float Unkown=0.55f,intetval;
     void Start()
     {
-        Unkown*=Note_Number;
+        Unkown += intetval* Note_Number;
     }
     void Update()
     {
@@ -55,6 +55,7 @@ public class move : MonoBehaviour
             if (mane.Recast && switching)
             {
                 //何か呼ぶならここ
+                // bmane.Return_Judge();
             }
             //ノーツ使いまわし用
             Unkown += count*intetval;

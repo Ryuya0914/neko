@@ -74,7 +74,7 @@ public class mane : MonoBehaviour
         if (NullText) Invoke("Null_Text", Summary.Reset_Time);
 
         //試し用
-        if (Input.GetKeyDown(KeyCode.Return)) Return_Judge();
+        // if (Input.GetKeyDown(KeyCode.Return)) Return_Judge();
 
 
 
